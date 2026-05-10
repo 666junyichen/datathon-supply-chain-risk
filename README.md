@@ -106,7 +106,13 @@ The project includes a Tkinter-based prototype for interactive shipment risk pre
 
 ## Web Demo
 
-The repository also includes a Streamlit app entry point in `app.py`. To run the web demo locally, first export the trained model artifacts:
+Try the deployed Streamlit app here:
+
+**Live Demo:** https://666junyichen-datathon-supply-chain-risk-app-ed7qeh.streamlit.app/
+
+<img width="1197" alt="Streamlit shipment risk predictor web demo" src="image/README/1778427229314.png" />
+
+The repository includes a Streamlit app entry point in `app.py`. To run the web demo locally, first export the trained model artifacts:
 
 ```bash
 python scripts/export_model_artifacts.py --data path/to/dynamic_supply_chain_logistics_dataset.csv
@@ -124,8 +130,6 @@ Then start the Streamlit app:
 ```bash
 streamlit run app.py
 ```
-
-After deployment, the Streamlit Cloud URL can be added here as the public live demo link.
 
 ## Project Structure
 

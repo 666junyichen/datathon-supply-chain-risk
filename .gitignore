@@ -6,3 +6,5 @@ venv/
 Datathon_Cleaned.csv
 dynamic_supply_chain_logistics_dataset.csv
 data manashon/
+image/README/*.png
+!image/README/1778427229314.png
