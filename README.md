@@ -34,7 +34,7 @@ The goal of the project was to build a risk classification pipeline that could:
 - **Machine Learning:** scikit-learn, XGBoost
 - **Class Imbalance Handling:** SMOTE
 - **Deep Learning / Tabular Modeling:** TabTransformer
-- **Interface Prototype:** Tkinter
+- **Interface Prototype:** Tkinter, Streamlit
 - **Notebook Environment:** Jupyter / Google Colab
 
 ## Machine Learning Pipeline
@@ -55,7 +55,7 @@ The goal of the project was to build a risk classification pipeline that could:
    - Evaluated results using accuracy, classification reports, confusion matrices, and feature importance plots.
 
 5. **Prototype Interface**
-   - Built a Tkinter GUI that allows users to adjust shipment-related inputs and generate predicted risk levels.
+   - Built a Tkinter GUI and Streamlit-ready web app that allow users to adjust shipment-related inputs and generate predicted risk levels.
 
 ## Key Feature Engineering
 
@@ -104,12 +104,41 @@ The project includes a Tkinter-based prototype for interactive shipment risk pre
 
 <img width="1197" height="638" alt="Shipment Risk Predictor GUI" src="https://github.com/user-attachments/assets/c8a68ec7-8c97-4af6-822b-c6df3998a7d7" />
 
+## Web Demo
+
+The repository also includes a Streamlit app entry point in `app.py`. To run the web demo locally, first export the trained model artifacts:
+
+```bash
+python scripts/export_model_artifacts.py --data path/to/dynamic_supply_chain_logistics_dataset.csv
+```
+
+This creates:
+
+```text
+xgb_model.pkl
+scaler.pkl
+```
+
+Then start the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+After deployment, the Streamlit Cloud URL can be added here as the public live demo link.
+
 ## Project Structure
 
 ```text
 .
 |-- Datathon_Powerhouse.ipynb   # EDA, feature engineering, modeling, and evaluation
+|-- app.py                      # Streamlit web demo
 |-- GUI.py                      # Tkinter GUI for shipment risk prediction
+|-- risk_features.py            # Shared feature engineering logic
+|-- requirements.txt            # Python dependencies for local and cloud deployment
+|-- scripts/
+|   `-- export_model_artifacts.py
+|                                  # Trains and saves xgb_model.pkl and scaler.pkl
 `-- README.md                   # Project documentation
 ```
 
@@ -125,7 +154,7 @@ cd datathon-supply-chain-risk
 Install the main dependencies:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn imbalanced-learn xgboost pytorch-widedeep
+pip install -r requirements.txt
 ```
 
 Open the notebook:
@@ -138,6 +167,12 @@ Run the GUI prototype:
 
 ```bash
 python GUI.py
+```
+
+Run the Streamlit web app:
+
+```bash
+streamlit run app.py
 ```
 
 ## Project Contributions

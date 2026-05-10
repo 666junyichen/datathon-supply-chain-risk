@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.streamlit/
+.venv/
+venv/
+Datathon_Cleaned.csv
+dynamic_supply_chain_logistics_dataset.csv
+data manashon/
