@@ -1,0 +1,16 @@
+.git/
+.vercel/
+.env*
+.gitignore
+*.pkl
+*.ipynb
+*.py
+requirements.txt
+README.md
+scripts/
+tests/
+docs/
+image/
+data manashon/
+web/package.json
+web/.vercel/
