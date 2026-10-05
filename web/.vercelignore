@@ -1,0 +1,6 @@
+tests/
+README.md
+package.json
+.git/
+.env*
+.vercel/
